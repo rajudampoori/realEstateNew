@@ -9,7 +9,8 @@ const Api = () => {
                 "Accept": "application/json"
             }
         }
-        fetch("http://localhost:8000/listings", httpactions)
+        fetch("https://realestatenewbackend.onrender.com/listings", httpactions)
+        //http://localhost:8000/
             .then((data) => data.json()).then((data) => {
                 console.log(data)
                 setData(data.listings)

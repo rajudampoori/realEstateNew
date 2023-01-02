@@ -30,7 +30,7 @@ function Signin ({ setUser, setToken }) {
 
     // console.log("user login succesfully done");
 
-    const data = await fetch('/login', {
+    const data = await fetch('https://realestatenewbackend.onrender.com/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

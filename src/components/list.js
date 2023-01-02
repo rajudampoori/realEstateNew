@@ -46,7 +46,7 @@ const List = () => {
   const [listData, setData] = useState([]);
   const [ppdID, setppdID] = useState();
   useEffect(() => {
-    fetch("http://localhost:8000/listing")
+    fetch("https://realestatenewbackend.onrender.com/listing")
       .then((res) => res.json())
       .then((result) => {
         // console.log(result.data);

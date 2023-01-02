@@ -48,7 +48,7 @@ const SignUp = () => {
     } else if (password !== cpassword) {
       alert('Passwords Do Not Match')
     } else {
-      const data = await fetch('/signup', {
+      const data = await fetch('https://realestatenewbackend.onrender.com/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
