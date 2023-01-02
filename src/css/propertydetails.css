@@ -1,0 +1,21 @@
+.btn2 {
+    /* background-color:  #6AB4F8;
+    color: white;
+    width: 150px;
+    height: 30px;
+    border-radius: 20%; */
+    background-color: #6AB4F8;
+    height: 30px;
+    border-radius: 100px;
+    width: 150px;
+    color: white;
+}
+
+/* #details-section-left-id{
+    margin-top: 1px;
+} */
+
+.all-container {
+    height: 90%;
+}
+

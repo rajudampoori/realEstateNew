@@ -1,0 +1,30 @@
+.page-top-header{
+    background: #F5F5F5;
+    font-family: Source Sans Pro;
+    font-size: 18px;
+    color: #A6A6A6;
+
+}
+header{
+    display: flex;
+    justify-content: space-between;
+}
+header div{
+    margin: 25px;
+}
+hr{
+    margin: 0px;
+    color: #E1F9F4;
+}
+
+/* media queries for header */
+@media only screen and (max-width: 720px) {
+    .page-top-header{
+        background: #F5F5F5;
+        font-family: Source Sans Pro;
+        font-size: 12px;
+        color: #A6A6A6;
+    
+    }
+    
+  }

@@ -1,0 +1,38 @@
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 3%;
+    margin-bottom: -6%;
+    background-color: rgb(252, 249, 249);
+    width: 72%;
+    margin-left: 16%;
+    gap: 10px;
+    border-radius: 40px;
+  }
+  
+  .Basic {
+    background-color: rgb(145, 210, 234);
+    border-radius: 50px;
+    padding: 8px;
+    border-left: 50%;
+    border-left: 50%;
+  }
+  
+   .circle-basic {
+    border-radius: 50%;
+    padding: 3px;
+    background-color: rgb(241, 235, 235);
+  } 
+  
+  .circle {
+    border-radius: 50%;
+    padding: 3px;
+    background-color: #F5F5F5;
+    margin-right: 6px;
+  } 
+  .nochange {
+    margin-top: 1%;
+    margin-left: 20px;
+  }
+  

@@ -1,0 +1,15 @@
+.page-sidebar-container{
+    max-width: 200px;
+    background: #E1F9F4;
+    height: 80vh;
+    float: left;
+    
+}
+.page-nav-elements{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.page-nav-content{
+    margin: 15px 10px;
+}
