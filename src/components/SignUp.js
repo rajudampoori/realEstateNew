@@ -7,6 +7,8 @@ import { Link, useNavigate } from 'react-router-dom'
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false)
 
+  const [displaypw,setdisplaypw] = useState(false)
+
   const [inpval, setInpval] = useState({
     email: '',
     password: '',
@@ -113,7 +115,7 @@ const SignUp = () => {
 
           <input
             className='confirm-password'
-            type={showPassword ? 'text' : 'password'}
+            type={displaypw ? 'text' : 'password'}
             placeholder='Confirm Password'
             name='cpassword'
             value={inpval.cpassword}
@@ -123,7 +125,8 @@ const SignUp = () => {
           <span
             className='eye'
             onClick={() => {
-              setShowPassword(!showPassword)
+              // setShowPassword(!showPassword)
+              setdisplaypw(!displaypw)
             }}
             style={{ marginTop: '65px' }}
           >

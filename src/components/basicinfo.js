@@ -43,7 +43,7 @@ const BasicInfo = () => {
 
   const handleBack = async (e) => {
     e.preventDefault();
-    navigate("/basicinfo/propertydetails/generalinfo/locationinfo/listings");
+    navigate("/list");
   };
 
   const handleUpload = async (e) => {
@@ -84,7 +84,6 @@ const BasicInfo = () => {
                 setPropertyType(e.target.value);
               }}
             >
-              <option value="type">type</option>
               <option value="house">House</option>
               <option value="flat">Flat</option>
               <option value="plot">Plot</option>

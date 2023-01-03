@@ -165,7 +165,7 @@ const LocationInfo = () => {
       <div class="functional-buttons">
         {/* <!-- Cancel Button --> */}
         <div class="cancel-button">
-          <Link to="./generalinfo">
+          <Link to="/basicinfo/propertydetails/generalinfo/">
             <button class="button canc-button">Previous</button>
           </Link>
         </div>

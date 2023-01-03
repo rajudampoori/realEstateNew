@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
   }
+
   .sign-in-parent {
     display: flex;
     width: 100vw;
@@ -20,6 +21,9 @@
     position: relative;
   }
   
+  .sign-in-form-container:hover {
+    background-color: aqua;
+  }
   .sign-in-form-container h1 {
     margin-top: 5vh;
     margin-left: 12vw;
@@ -35,12 +39,16 @@
     height: 6vh;
     width: 24vw;
     margin-left: 3vw;
-  
+  padding: 5px;
     border-radius: 3px;
     border: 1px solid #e2e2e2;
     margin-top: 3vh;
   }
   
+  .sign-in-form-container input:hover {
+    border: 2px solid blue;
+  }
+
   .sign-in-form-container button {
     display: block;
     height: 6vh;
@@ -53,6 +61,11 @@
     color: white;
   }
   
+  .sign-in-form-container button:hover {
+    border: 2px solid blue;
+
+  }
+
   .eye {
     position: absolute;
     left: 24vw;

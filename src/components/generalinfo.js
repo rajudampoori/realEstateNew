@@ -147,6 +147,8 @@ const GeneralInfo = () => {
         </div>
       </div>
       <div className="generalInfoCamera">
+        <span>
+        </span>
         <input
           type="file"
           name="image"
@@ -154,6 +156,8 @@ const GeneralInfo = () => {
             setImage(e.target.files[0]);
           }}
         ></input>
+
+ <i class="fa-solid fa-circle-camera"></i>
       </div>
 
       <div className="functional-buttons">
@@ -162,6 +166,7 @@ const GeneralInfo = () => {
             <button className="button canc-button">Previous</button>
           </Link>
         </div>
+
         <div className="continue-button">
           <button
             className="button cont-button"
