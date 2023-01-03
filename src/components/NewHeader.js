@@ -17,7 +17,7 @@ const NewHeader = () => {
         Authorization: token,
         Accept: "application/json",
       },
-      credentials: "include",
+      // credentials: "include",
     });
     const data = await res.json();
     // console.log(data)
