@@ -18,7 +18,7 @@ const List = () => {
   const DashboardValid = async () => {
     let token = localStorage.getItem("usersdatatoken");
 
-    const res = await fetch("/validuser", {
+    const res = await fetch("https://realestatenewbackend.onrender.com/validuser", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -46,7 +46,7 @@ const List = () => {
   const [listData, setData] = useState([]);
   const [ppdID, setppdID] = useState();
   useEffect(() => {
-    fetch("https://realestatenewbackend.onrender.com/listing")
+    fetch("http://localhost:8000/listing")
       .then((res) => res.json())
       .then((result) => {
         // console.log(result.data);

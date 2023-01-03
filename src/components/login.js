@@ -47,6 +47,7 @@ function Signin ({ setUser, setToken }) {
       localStorage.setItem('usersdatatoken', res.result.token)
       history('/list')
       // console.log(res)
+      alert("Login Successful")
     } else {
       alert(res.message)
 

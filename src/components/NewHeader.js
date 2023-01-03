@@ -10,7 +10,6 @@ const NewHeader = () => {
   const { logindata, setLoginData } = useContext(LoginContext);
   const logoutuser = async () => {
     let token = localStorage.getItem("usersdatatoken");
-
     const res = await fetch("/logout", {
       method: "GET",
       headers: {
@@ -51,6 +50,8 @@ const NewHeader = () => {
               {logindata
                 ? logindata.ValidUserOne.email.slice(0, 5).toUpperCase()
                 : ""}
+<span style={{marginLeft : "10px"}}>logout</span>
+            
               <i
                 class="fa fa-angle-down"
                 onClick={() => {
