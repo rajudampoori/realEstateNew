@@ -46,7 +46,7 @@ const recivedData = await res.json();
     console.log(totalArea);
     const objectname = { totalArea };
     await axios
-      .post("http://localhost:8000/api/basicinfo/posts", objectname)
+      .post("https://realestatenewbackend.onrender.com/api/basicinfo/posts", objectname)
       //mongodb://localhost:27017
       .then((res) => {
         console.log(res);

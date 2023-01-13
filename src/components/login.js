@@ -50,7 +50,6 @@ function Signin ({ setUser, setToken }) {
       alert("Login Successful")
     } else {
       alert(res.message)
-
       setInpval({ ...inpval, email: '', password: '' })
     }
   }

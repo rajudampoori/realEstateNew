@@ -1,7 +1,7 @@
 import { useState, useContext, useEffect } from "react";
 import { LoginContext } from "./ContextProvider/Context";
 import { useNavigate } from "react-router-dom";
-
+import PropertyImage from "./PropertyImage";
 import "../css/list.css";
 import Listings from "./listings";
 import "../css/basicinfo.css";
@@ -46,21 +46,19 @@ const List = () => {
   const [listData, setData] = useState([]);
   const [ppdID, setppdID] = useState();
   useEffect(() => {
-    fetch("http://localhost:8000/listing")
+    fetch("https://realestatenewbackend.onrender.com/listing")
       .then((res) => res.json())
       .then((result) => {
-        // console.log(result.data);
-        // if(result.data.message ==="No data"){
-        //   console.log('Nothing to present')
-        // } else{
-        //   setData(result.data);
-        // }
+       
         setData(result.data);
       });
   }, []);
   function parent(chilData) {
     setppdID(chilData);
   }
+
+  const [show, setShow] = useState(false);
+  const[imageItem, setImageItem] = useState();
 
   return (
     <>
@@ -103,7 +101,7 @@ const List = () => {
               >
                 <ul>
                   <li>{item.ppdid}</li>
-                  <li>
+                  <li className="img-section" onClick={()=>{setShow(true); setImageItem(item)}}>
                     <i className="fa fa-image" style={{ color: "#DFDFDF" }}></i>
                   </li>
                   <li>{item.property}</li>
@@ -120,6 +118,7 @@ const List = () => {
               </div>
             );
           })}
+          <PropertyImage show={show} imageItem={imageItem} onClose = {()=>setShow(false)}/>
       </div>
     </>
   );

@@ -53,7 +53,7 @@ const BasicInfo = () => {
     navigate("/basicinfo/propertydetails");
 
     await axios
-      .post("http://localhost:8000/api/posts", objectname)
+      .post("https://realestatenewbackend.onrender.com/api/posts", objectname)
       .then((res) => {
         console.log(res);
       })

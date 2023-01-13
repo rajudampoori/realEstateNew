@@ -28,7 +28,7 @@ const GeneralInfo = () => {
       const res = await axios.post(url, formdata);
       const imageUrl = res.data.secure_url;
       const postData = await axios.post(
-        "http://localhost:8000/api/basicinfo/propertydetails/generalinfo/posts",
+        "https://realestatenewbackend.onrender.com/api/basicinfo/propertydetails/generalinfo/posts",
         {
           image: imageUrl,
           mobile: mobile,
