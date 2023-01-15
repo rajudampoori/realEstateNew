@@ -10,13 +10,11 @@ import NavBasic from '../components/NavFolder/NavBasic'
 
 const BasicInfo = () => {
   const [propertyType, setPropertyType] = useState("");
-
   const navigate = useNavigate();
   const { logindata, setLoginData } = useContext(LoginContext);
   const [info, setInfo] = useState(false);
   const DashboardValid = async () => {
     let token = localStorage.getItem("usersdatatoken");
-
     const res = await fetch("/validuser", {
       method: "GET",
       headers: {
@@ -24,9 +22,7 @@ const BasicInfo = () => {
         Authorization: token,
       },
     });
-
     const recivedData = await res.json();
-
     if (recivedData.status == 401 || !recivedData) {
       navigate("/");
     } else {
@@ -51,155 +47,86 @@ const BasicInfo = () => {
     console.log(propertyType);
     const objectname = { propertyType };
     navigate("/basicinfo/propertydetails");
-
-    await axios
-      .post("https://realestatenewbackend.onrender.com/api/posts", objectname)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((error) => {
+    await axios.post("https://realestatenewbackend.onrender.com/api/posts", objectname)
+      .then((res) => {console.log(res);}).catch((error) => {
         console.log(error);
       });
     navigate("/basicinfo/propertydetails");
     setPropertyType("");
   };
-  
   return (
     <>
-      <NewLogo />
-      <hr />
+      <NewLogo /><hr />
       <NewHeader />
       <NavBasic />
       <div className="new-basic-info-container">
-        {/* <!-- Row 1 --> */}
         <div className="row1">
-          {/* <!-- Contents --> */}
           <div className="content-1">
-            <label for="fname">Property Type</label>
-            <br />
-            <select
-              className="content-type"
-              name="property-type"
-              onChange={(e) => {
-                setPropertyType(e.target.value);
-              }}
-            >
+            <label for="fname">Property Type</label><br />
+            <select className="content-type" name="property-type"onChange={(e) => {setPropertyType(e.target.value);}}>
+              <option value="type">Select type</option>
               <option value="house">House</option>
               <option value="flat">Flat</option>
               <option value="plot">Plot</option>
-            </select>
-            <br />
+            </select><br />
           </div>
-
           <div className="content-2">
-            <label for="fname">Property Age</label>
-            <br />
+            <label for="fname">Property Age</label><br />
             <select className="content-type" name="property-type">
               <option value="0-5">0-5 Years</option>
               <option value="6-10">6-10 Years</option>
               <option value="11-15">11-15 Years</option>
               <option value="more">More than 15 Years</option>
-            </select>
-            <br />
+            </select><br />
           </div>
-
           <div className="content-3">
-            <label for="fname">Price</label>
-            <br />
-            <input
-              type="text"
-              className="content-type"
-              id="price"
-              name="price"
-              placeholder="Example: 100000"
-            />
-            <br />
+            <label for="fname">Price</label><br />
+            <input type="text" className="content-type" id="price" name="price" placeholder="Example: 100000"/><br />
           </div>
           <div className="content-4">
-            <label for="fname">Property Description</label>
-            <br />
-            <input
-              type="text"
-              className="content-type"
-              id="price"
-              name="price"
-            />
-            <br />
+            <label for="fname">Property Description</label><br />
+            <input type="text" className="content-type" id="price" name="price"/><br />
           </div>
-
-          {/* <!-- Contents --> */}
         </div>
-        {/* <!-- Row 1 Ends--> */}
-
-        {/* <!-- Row 2 Ends--> */}
         <div className="row2">
-          {/* <!-- Contents --> */}
           <div className="content-1">
-            <label for="negotiable">Negotiable</label>
-            <br />
+            <label for="negotiable">Negotiable</label><br />
             <select className="content-type" name="negotiable">
               <option value="Yes">Yes</option>
               <option value="No">No</option>
-            </select>
-            <br />
+            </select><br />
           </div>
-
           <div className="content-2">
-            <label for="ownership">Ownership</label>
-            <br />
+            <label for="ownership">Ownership</label><br />
             <select className="content-type" name="ownership">
               <option value="dealer">Dealer Owned</option>
               <option value="private">Privately Owned</option>
-            </select>
-            <br />
+            </select><br />
           </div>
           <div className="content-3">
-            <label for="property-approved">Property Approved</label>
-            <br />
+            <label for="property-approved">Property Approved</label><br />
             <select className="content-type" name="property-approved">
               <option value="Yes">Yes</option>
               <option value="No">No</option>
-            </select>
-            <br />
+            </select><br />
           </div>
-
           <div className="content-3">
-            <label for="bank-loan">Bank Loan</label>
-            <br />
+            <label for="bank-loan">Bank Loan</label><br />
             <select className="content-type" name="property-approved">
               <option value="Yes">Yes</option>
               <option value="No">No</option>
-            </select>
-            <br />
+            </select><br />
           </div>
-
-          {/* <!-- Contents --> */}
         </div>
       </div>
-
-      {/* <!-- Cancel and previous buttons --> */}
       <div className="functional-buttons">
-        {/* <!-- Cancel Button --> */}
         <div className="cancel-button">
-          <button
-            className="button canc-button"
-            onClick={(e) => {
-              handleBack(e);
-            }}
-          >
-            Cancel
-          </button>
+          <button className="button canc-button" onClick={(e) => { handleBack(e); }}> Cancel</button>
         </div>
         <div className="continue-button">
-          <button
-            className="button cont-button"
-            onClick={(e) => handleUpload(e)}
-          >
-            Save & Continue
-          </button>
+          <button className="button cont-button" onClick={(e) => handleUpload(e)}>Save & Continue</button>
         </div>
       </div>
-      
     </>
   );
 };

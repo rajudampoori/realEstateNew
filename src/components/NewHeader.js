@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useContext } from "react";
 import { LoginContext } from "./ContextProvider/Context";
-import "./header.css";
 import { useNavigate } from "react-router-dom";
 import '../css/NewHeader.css'
 
@@ -17,13 +16,9 @@ const NewHeader = () => {
         Authorization: token,
         Accept: "application/json",
       },
-      // credentials: "include",
     });
     const data = await res.json();
-    // console.log(data)
-
     if (data.status == 201) {
-      //   console.log('use logout')
       localStorage.removeItem("usersdatatoken");
       setLoginData(false);
       navigate("/");
@@ -36,30 +31,18 @@ const NewHeader = () => {
       <div class="page-top-header">
         <header>
           <div class="page-userid">
-            <p>
-              USER ID:
-              {logindata
-                ? logindata.ValidUserOne._id.slice(0, 5).toUpperCase()
-                : ""}
-              
-            </p>
+            <p> USER ID:{logindata ? logindata.ValidUserOne._id.slice(0, 5).toUpperCase(): ""}</p>
           </div>
           <div class="page-userName">
             <i class="fa fa-user"></i>&nbsp;&nbsp;
-            <span>
-              {logindata
-                ? logindata.ValidUserOne.email.slice(0, 5).toUpperCase()
-                : ""}
-<span style={{marginLeft : "10px"}}>logout</span>
-            
-              <i
-                class="fa fa-angle-down"
-                onClick={() => {
+            <span>{logindata ? logindata.ValidUserOne.email.slice(0, 5).toUpperCase(): ""}
+            <span style={{marginLeft : "10px"}}>logout</span>
+             <i class="fa fa-angle-down" onClick={() => {
                   if (window.confirm("Do you want to logout.!?")) {
                     logoutuser();
                   }
-                }}
-              ></i>
+                }}>
+               </i>
             </span>
           </div>
         </header>

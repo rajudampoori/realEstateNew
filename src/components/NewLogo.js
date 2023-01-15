@@ -7,7 +7,6 @@ const NewLogo = () => {
       <div className="page-logo">
         <h2>LOGO</h2>
       </div>
-
       <div className="page-nav-elements">
         <div className="page-nav-content">
           <i className="fa fa-home"></i> Property

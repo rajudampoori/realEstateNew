@@ -8,27 +8,19 @@ import LocationInfo from './components/locationinfo'
 import List from './components/list'
 import Listings from './components/listings'
 import SignUp from './components/SignUp'
-function App () {
+function App() {
   return (
     <div className='App'>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path='/list' element={<List />} />
-
           <Route path='/signup' element={<SignUp />} />
-
           <Route path='/listings' element={<Listings />} />
           <Route path='/basicinfo' element={<BasicInfo />} />
           <Route path='/basicinfo/propertydetails' element={<Properties />} />
-          <Route
-            path='/basicinfo/propertydetails/generalinfo'
-            element={<GeneralInfo />}
-          />
-          <Route
-            path='/basicinfo/propertydetails/generalinfo/locationinfo'
-            element={<LocationInfo />}
-          />
+          <Route path='/basicinfo/propertydetails/generalinfo' element={<GeneralInfo />} />
+          <Route path='/basicinfo/propertydetails/generalinfo/locationinfo' element={<LocationInfo />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -20,10 +20,6 @@
     background-color: white;
     position: relative;
   }
-  
-  .sign-in-form-container:hover {
-    background-color: aqua;
-  }
   .sign-in-form-container h1 {
     margin-top: 5vh;
     margin-left: 12vw;
@@ -46,7 +42,7 @@
   }
   
   .sign-in-form-container input:hover {
-    border: 2px solid blue;
+    border: 2px solid gray;
   }
 
   .sign-in-form-container button {
@@ -62,7 +58,7 @@
   }
   
   .sign-in-form-container button:hover {
-    border: 2px solid blue;
+    border: 2px solid gray;
 
   }
 
@@ -82,7 +78,6 @@
 }
 
 #signup {
-  /* margin-left: 35%; */
   margin-top: 12%;
   text-align: center;
   margin-left: 1vw;

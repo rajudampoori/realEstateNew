@@ -19,11 +19,6 @@
     background-color: white;
     position: relative;
   }
-  
-  .sign-up-form-container:hover {
-    background-color: aqua;
-  }
-
   .sign-up-form-container h1 {
     margin-top: 5vh;
     margin-left: 12vw;
