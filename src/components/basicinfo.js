@@ -107,10 +107,9 @@ const BasicInfo = () => {
           <div className="content-3">
             <label for="fname">Price</label>
             <br />
-            <input
-              type="text"
-              className="content-type"
-              id="price"
+            <input type="text"
+             className="content-type"
+             id="price"
               name="price"
               placeholder="Example: 100000"
             />
@@ -127,8 +126,6 @@ const BasicInfo = () => {
             />
             <br />
           </div>
-
-          {/* <!-- Contents --> */}
         </div>
         {/* <!-- Row 1 Ends--> */}
 

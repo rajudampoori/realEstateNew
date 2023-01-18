@@ -9,13 +9,10 @@ import NewLogo from "./NewLogo";
 
 const List = () => {
   const navigate = useNavigate();
-
   const { logindata, setLoginData } = useContext(LoginContext);
-
   const [info, setInfo] = useState(false);
   const DashboardValid = async () => {
     let token = localStorage.getItem("usersdatatoken");
-
     const res = await fetch("https://realestatenewbackend.onrender.com/validuser", {
       method: "GET",
       headers: {
@@ -23,17 +20,13 @@ const List = () => {
         Authorization: token,
       },
     });
-
     const recivedData = await res.json();
-
     if (recivedData.status == 401 || !recivedData) {
       navigate("/");
     } else {
-      
       setLoginData(recivedData);
     }
   };
-
   useEffect(() => {
     setTimeout(() => {
       DashboardValid();
@@ -46,22 +39,14 @@ const List = () => {
   const fetchData = async()=>{
     const data = await fetch("https://realestatenewbackend.onrender.com/listing");
     const res = await data.json();
-    console.log(res.data);
     setData(res.data);
   }
-  
   useEffect(() => {
-    // fetch("https://realestatenewbackend.onrender.com/listing")
-    //   .then((res) => res.json())
-    //   .then((result) => {
-    //    setData(result.data);
-    //   });
     fetchData();
   }, []);
   function parent(chilData) {
     setppdID(chilData);
   }
-
   const [show, setShow] = useState(false);
   const[imageItem, setImageItem] = useState();
 
