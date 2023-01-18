@@ -67,7 +67,7 @@ const List = () => {
               <li>Views</li>
               <li>Status</li>
               <li>Days Left</li>
-              <li>Action</li>
+              {/* <li>Action</li> */}
             </ul>
           </div>
         </div>
@@ -100,10 +100,10 @@ const List = () => {
                   <li>{item.views}</li>
                   <li>{status}</li>
                   <li>{item.daysleft}</li>
-                  <li>
+                  {/* <li>
                     <i className="fa fa-edit" style={{ color: "#DFDFDF" }}></i>
                     <i className="fa fa-eye" style={{ color: "#DFDFDF" }}></i>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
             );
