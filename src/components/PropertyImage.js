@@ -11,6 +11,6 @@ const PropertyImage = ({show, imageItem, onClose}) => {
         </div>
     </div>
   )
-}
+};
 
 export default PropertyImage

@@ -24,6 +24,7 @@
   input {
     color: #7d7d7d;
   }
+  /* media-quieries */
   @media only screen and (max-width: 768px) {
     .basic-info-container {
       display: flex;

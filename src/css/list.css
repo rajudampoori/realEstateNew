@@ -8,6 +8,7 @@
     margin-right: 20px;
 }
 .content-list-headers{
+    /* margin: 15px; */
     margin: 1px;
     border-radius: 15px;
     background: #FFFFFF;
@@ -35,6 +36,7 @@
     background-color: #F5FAF5;
     color: #416899;
     padding: 5px;
+    /* width: 11.11%; */
     font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: 200;
@@ -44,6 +46,9 @@
 
 }
 
+/*  ---------------------*/
+
+
 .img-section{
     cursor: pointer;
 }
@@ -52,11 +57,13 @@
 }
 .visible{
     position: absolute;
+    /* background: grey; */
     width: 500px;
     height: 300px;
     border-radius: 8px;
     display: flex;
     cursor: pointer;
+    /* display: none; */
 }
 .visible > img{
     width: 100%;

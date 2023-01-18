@@ -2,19 +2,24 @@ import React from 'react'
 import { useState } from 'react'
 import '../css/signup.css'
 import eye from '../images/eye.png'
-import { Link, useNavigate } from 'react-router-dom'
 
+import { Link, useNavigate } from 'react-router-dom'
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false)
+
   const [displaypw,setdisplaypw] = useState(false)
+
   const [inpval, setInpval] = useState({
     email: '',
     password: '',
     cpassword: ''
   })
   const history = useNavigate()
+
   const setVal = e => {
+    // console.log(e.target.value)
     const { name, value } = e.target
+
     setInpval(() => {
       return {
         ...inpval,
@@ -22,9 +27,14 @@ const SignUp = () => {
       }
     })
   }
+
   const addUserdata = async e => {
     e.preventDefault()
+
     const { email, password, cpassword } = inpval
+
+    // console.log("user registration succesfully done");
+
     if (email === '') {
       alert('please provide email')
     } else if (!email.includes('@')) {
@@ -51,7 +61,9 @@ const SignUp = () => {
           cpassword
         })
       })
+
       const res = await data.json()
+
       if (res.status == 201) {
         alert('Registration successfull')
         history('/')
@@ -59,6 +71,7 @@ const SignUp = () => {
         console.log(res)
       } else {
         alert(res.message)
+
         setInpval({ ...inpval, email: '', password: '' })
       }
     }
@@ -70,16 +83,58 @@ const SignUp = () => {
         <h1 style={{ color: '#4c57b6' }}>Logo</h1>
         <p>Create New Account</p>
         <form>
-          <input type='email' className='UserID' id='email' placeholder='Mail ID' name='email' value={inpval.email}  required  onChange={setVal}/>
-          <input className='password' type={showPassword ? 'text' : 'password'} placeholder='Password' id='password' name='password' value={inpval.password}  onChange={setVal} required/>
-          <span className='eye' onClick={() => { setShowPassword(!showPassword) }}>
+          <input
+            type='email'
+            className='UserID'
+            id='email'
+            placeholder='Mail ID'
+            name='email'
+            value={inpval.email}
+            required
+            onChange={setVal}
+          />
+
+          <input
+            className='password'
+            type={showPassword ? 'text' : 'password'}
+            placeholder='Password'
+            id='password'
+            name='password'
+            value={inpval.password}
+            onChange={setVal}
+            required
+          />
+          <span
+            className='eye'
+            onClick={() => {
+              setShowPassword(!showPassword)
+            }}
+          >
             <img src={eye} alt='no data' />
           </span>
-          <input  className='confirm-password' type={displaypw ? 'text' : 'password'} placeholder='Confirm Password' name='cpassword' value={inpval.cpassword} required  onChange={setVal}/>
-          <span  className='eye'  onClick={() => { setdisplaypw(!displaypw) }} style={{ marginTop: '65px' }} >
+
+          <input
+            className='confirm-password'
+            type={displaypw ? 'text' : 'password'}
+            placeholder='Confirm Password'
+            name='cpassword'
+            value={inpval.cpassword}
+            required
+            onChange={setVal}
+          />
+          <span
+            className='eye'
+            onClick={() => {
+              // setShowPassword(!showPassword)
+              setdisplaypw(!displaypw)
+            }}
+            style={{ marginTop: '65px' }}
+          >
             <img src={eye} alt='no data' />
           </span>
-          <button type='submit' className='submit-button' onClick={addUserdata}> Sign Up</button>
+          <button type='submit' className='submit-button' onClick={addUserdata}>
+            Sign Up
+          </button>
         </form>
       </div>
     </div>
