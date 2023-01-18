@@ -43,12 +43,20 @@ const List = () => {
 
   const [listData, setData] = useState([]);
   const [ppdID, setppdID] = useState();
+  const fetchData = async()=>{
+    const data = await fetch("https://realestatenewbackend.onrender.com/listing");
+    const res = await data.json();
+    console.log(res.data);
+    setData(res.data);
+  }
+  
   useEffect(() => {
-    fetch("https://realestatenewbackend.onrender.com/listing")
-      .then((res) => res.json())
-      .then((result) => {
-       setData(result.data);
-      });
+    // fetch("https://realestatenewbackend.onrender.com/listing")
+    //   .then((res) => res.json())
+    //   .then((result) => {
+    //    setData(result.data);
+    //   });
+    fetchData();
   }, []);
   function parent(chilData) {
     setppdID(chilData);
